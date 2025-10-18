@@ -6,7 +6,7 @@
 </head>
 <body>
     <div>
-    <img th:src="@{|/photos/${staff.photo}|}">
+    <img th:src="@{|/photos/${staff.photo}|}"sizes="100px">
     <hr>
     Email: <b th:text="${staff.id}"></b><hr>
     Họ và tên: <b th:text="${#strings.capitalizeWords(staff.fullname)}"></b><hr>
