@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inventory Report</title>
+</head>
+<body>
+<h3>BÁO CÁO TỒN KHO THEO LOẠI</h3>
+<table border="1" style="width:100%">
+    <thead>
+    <tr>
+        <th>Loại hàng</th>
+        <th>Tổng giá</th>
+        <th>Số sản phẩm</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item: ${items}">
+        <td th:text="${item.group.name}"></td>
+        <td th:text="${#numbers.formatDecimal(item.sum, 0, 'COMMA', 2, 'POINT')}"></td>
+        <td th:text="${item.count}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
